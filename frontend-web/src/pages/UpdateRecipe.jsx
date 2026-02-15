@@ -29,7 +29,7 @@ const UpdateRecipe = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                const { data } = await axios.get(`http://localhost:5000/api/recipes/${id}`, config);
+                const { data } = await axios.get(`https://rahasiadapur.onrender.com/api/recipes/${id}`, config);
                 // Robust ownership check
                 const ownerId = data.user?._id || data.user;
                 if (ownerId !== user?._id) {
@@ -81,7 +81,7 @@ const UpdateRecipe = () => {
                 }
             };
 
-            await axios.put(`http://localhost:5000/api/recipes/${id}`, updatedRecipe, config);
+            await axios.put(`https://rahasiadapur.onrender.com/api/recipes/${id}`, updatedRecipe, config);
             navigate(`/recipes/${id}`);
         } catch (err) {
             setError(err.response?.data?.message || 'Update failed');

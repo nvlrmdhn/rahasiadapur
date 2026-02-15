@@ -5,7 +5,7 @@ const RecipeCard = ({ recipe, fromMyRecipe }) => {
         if (!imagePath) return 'https://via.placeholder.com/300?text=No+Image';
         if (imagePath.startsWith('http')) return imagePath;
         // Adjust backslashes for Windows paths if needed, though browsers usually handle forward slash fine
-        return `http://localhost:5000/${imagePath.replace(/\\/g, '/')}`;
+        return `https://rahasiadapur.onrender.com/${imagePath.replace(/\\/g, '/')}`;
     };
 
     return (

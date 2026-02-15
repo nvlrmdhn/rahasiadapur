@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5000/api/recipes');
+                const { data } = await axios.get('https://rahasiadapur.onrender.com/api/recipes');
                 setRecipes(data);
             } catch (error) {
                 console.error('Error fetching recipes:', error);
@@ -26,7 +26,7 @@ const Home = () => {
     const handleCategorySelect = async (category) => {
         setLoading(true);
         try {
-            const { data } = await axios.get(`http://localhost:5000/api/recipes?category=${category}`);
+            const { data } = await axios.get(`https://rahasiadapur.onrender.com/api/recipes?category=${category}`);
             setRecipes(data);
         } catch (error) {
             console.error('Error fetching recipes:', error);

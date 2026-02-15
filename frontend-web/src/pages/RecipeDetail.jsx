@@ -20,7 +20,7 @@ const RecipeDetail = () => {
                     },
                 } : {};
 
-                const { data } = await axios.get(`http://localhost:5000/api/recipes/${id}`, config);
+                const { data } = await axios.get(`https://rahasiadapur.onrender.com/api/recipes/${id}`, config);
                 setRecipe(data);
                 setError(null); // Clear any previous errors
             } catch (err) {
@@ -80,7 +80,7 @@ const RecipeDetail = () => {
                 {/* Left: Image */}
                 <div>
                     <img
-                        src={recipe.image ? (recipe.image.startsWith('http') ? recipe.image : `http://localhost:5000/${recipe.image.replace(/\\/g, '/')}`) : 'https://via.placeholder.com/600x400'}
+                        src={recipe.image ? (recipe.image.startsWith('http') ? recipe.image : `https://rahasiadapur.onrender.com/${recipe.image.replace(/\\/g, '/')}`) : 'https://via.placeholder.com/600x400'}
                         alt={recipe.title}
                         className='w-full h-[400px] object-cover rounded-xl shadow-lg'
                     />

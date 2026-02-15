@@ -13,7 +13,7 @@ const MyRecipe = () => {
         const fetchMyRecipes = async () => {
             if (!user) return;
             try {
-                const { data } = await axios.get('http://localhost:5000/api/recipes');
+                const { data } = await axios.get('https://rahasiadapur.onrender.com/api/recipes');
                 // Filter client side as discussed
                 const myRecipes = data.filter(recipe => recipe.user?._id === user._id || recipe.user === user._id);
                 setRecipes(myRecipes);

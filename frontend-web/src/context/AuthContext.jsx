@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
                 'Content-Type': 'application/json',
             },
         };
-        const { data } = await axios.post('http://localhost:5000/api/auth/login', { email, password }, config);
+        const { data } = await axios.post('https://rahasiadapur.onrender.com/api/auth/login', { email, password }, config);
         localStorage.setItem('userInfo', JSON.stringify(data));
         setUser(data);
     };
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
                 'Content-Type': 'application/json',
             },
         };
-        const { data } = await axios.post('http://localhost:5000/api/auth/register', { name, email, password }, config);
+        const { data } = await axios.post('https://rahasiadapur.onrender.com/api/auth/register', { name, email, password }, config);
         localStorage.setItem('userInfo', JSON.stringify(data));
         setUser(data);
     };

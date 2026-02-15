@@ -50,7 +50,7 @@ const AddRecipe = () => {
                 },
             };
 
-            await axios.post('http://localhost:5000/api/recipes', recipeData, config);
+            await axios.post('https://rahasiadapur.onrender.com/api/recipes', recipeData, config);
             navigate('/my-recipes');
         } catch (err) {
             setError(err.response?.data?.message || 'Failed to create recipe');

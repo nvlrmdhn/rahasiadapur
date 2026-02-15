@@ -14,7 +14,7 @@ const Recipes = () => {
     const fetchRecipes = async () => {
         setLoading(true);
         try {
-            let url = 'http://localhost:5000/api/recipes?';
+            let url = 'https://rahasiadapur.onrender.com/api/recipes?';
             if (searchTerm) url += `keyword=${searchTerm}&`;
             if (selectedCategory && selectedCategory !== 'All') url += `category=${selectedCategory}`;
 
